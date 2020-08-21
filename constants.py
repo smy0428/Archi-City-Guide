@@ -1,4 +1,3 @@
-DATABASE_URL = 'postgres://kdetqofdgdgotz:1358f3d456c1f91ea899590158c383635f7bf523cfbc84d38fcb92df48986b97@ec2-54-144-177-189.compute-1.amazonaws.com:5432/d7edaidi05j4oe'
 AUTH0_CLIENT_ID = 'AlHUXHQ9siAfCVG4lCLWyjI6DcK5ai53'
 AUTH0_CALLBACK_URL = 'http://127.0.0.1:5000/callback'
 AUTH0_DOMAIN = 'https://peter-coffee-shop.us.auth0.com'
