@@ -94,7 +94,6 @@ def create_app(test_config=None):
         flash('You have successfully logged in!')
         return redirect('/')
 
-    '''
     @cross_origin()
     def requires_auth_login(f):
         @wraps(f)
@@ -104,7 +103,8 @@ def create_app(test_config=None):
                 return redirect('/')
             return f(*args, **kwargs)
         return decorated
-
+        
+    '''
     @app.route('/dashboard')
     @cross_origin()
     @requires_auth_login
