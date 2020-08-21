@@ -94,6 +94,7 @@ def create_app(test_config=None):
         flash('You have successfully logged in!')
         return redirect('/')
 
+    '''
     @cross_origin()
     def requires_auth_login(f):
         @wraps(f)
@@ -111,6 +112,7 @@ def create_app(test_config=None):
         return render_template(
             'pages/dashboard.html',
             token=session['jwt_payload'])
+            '''
 
     @app.route('/logout')
     @cross_origin()
