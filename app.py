@@ -44,9 +44,9 @@ def create_app(test_config=None):
         'auth0',
         client_id=AUTH0_CLIENT_ID,
         client_secret=AUTHO_CLIENT_SECRET,
-        api_base_url=AUTH0_DOMAIN,
-        access_token_url=AUTH0_DOMAIN + '/oauth/token',
-        authorize_url=AUTH0_DOMAIN + '/authorize',
+        api_base_url='https://' + AUTH0_DOMAIN,
+        access_token_url='https://' + AUTH0_DOMAIN + '/oauth/token',
+        authorize_url='https://' + AUTH0_DOMAIN + '/authorize',
         client_kwargs={
             'scope': 'openid profile',
         },
