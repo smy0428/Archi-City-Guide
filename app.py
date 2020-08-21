@@ -120,7 +120,7 @@ def create_app(test_config=None):
         if 'jwt_payload' not in session:
             flash('You should log in first!')
             return redirect('/')
-            
+
         # Clear session stored data
         session['jwt_payload'] = None
         session.clear()
