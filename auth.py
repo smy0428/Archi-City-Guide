@@ -83,7 +83,7 @@ def verifty_decode_jwt(token):
     Python3.6 folder (or whatever version of python you're using)
     > double click on "Install Certificates.command" file.
     '''
-    josnurl = urlopen(f'https://{AUTH0_DOMAIN}/.well-known/jwks.json')
+    josnurl = urlopen(("https://" + AUTH0_DOMAIN + "/.well-known/jwks.json"))
     jwks = json.loads(josnurl.read())
 
     unverified_header = jwt.get_unverified_header(token)
