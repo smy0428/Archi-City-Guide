@@ -2,7 +2,8 @@
 
 ## About
 
-The Archi Guide is an architecture-tour-guide site that facilitates the discovery and sharing of travel experiences. This site lets you list new architects, cities, discvoer them, and list arhictectural work designed by the architects in the cities. You can also find various useful information to make a better plan for your next trip. You can easily start to explore the architectural world by typing the name of a city or architect. 
+The Archi Guide is an architecture-tour-guide site that facilitates the discovery and sharing of travel experiences. This site lets you list new architects, cities, discover them, and list architectural work designed by the architects in the cities. You can also find various useful information to make a better plan for your next trip. You can easily start to explore the architectural world by typing the name of a city or architect. The link is as follows:
+
 
 
 ## Installation
@@ -259,14 +260,8 @@ There are three roles for this application:
 
 ### Error Handling
 
-Errors are returned as JSON objects in the following format:
-```
-{
-    'success': False,
-    'error': 404,
-    'message': 'Resource not found.'
-}
-```
+Errors are handled by errorhandler and render with file in template/errors.
+
 
 ## Testing
 
