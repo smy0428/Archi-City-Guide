@@ -5,7 +5,6 @@ from sqlalchemy import (
 )
 from flask_sqlalchemy import SQLAlchemy
 import os
-import constants
 
 
 # ---------------------------------------------------------------------------#
@@ -13,15 +12,12 @@ import constants
 # ---------------------------------------------------------------------------#
 
 
-# for local test
-'''
 database_path = os.environ.get('DATABASE_URL')
 if database_path is None:
     database_name = "Archi_Guide"
     # database_name = 'archi_guide_test'
     database_path = "postgres://{}/{}".format('localhost:5432', database_name)
-    '''
-database_path = constants.DATABASE_URL
+
 
 db = SQLAlchemy()
 
