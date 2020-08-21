@@ -69,16 +69,19 @@ def create_app(test_config=None):
 # ----------------------------------------------------------------------------#
 
     @app.route('/')
+    @cross_origin()
     def welcome():
         return render_template('pages/home.html')
 
     @app.route('/login')
+    @cross_origin()
     def login():
         return auth0.authorize_redirect(
             redirect_uri=url_for('callback', _external=True),
             audience=AUTH0_AUDIENCE)
 
     @app.route('/callback')
+    @cross_origin()
     def callback():
 
         # Handles response from token endpoint
@@ -91,6 +94,7 @@ def create_app(test_config=None):
         flash('You have successfully logged in!')
         return redirect('/')
 
+    @cross_origin()
     def requires_auth_login(f):
         @wraps(f)
         def decorated(*args, **kwargs):
@@ -101,6 +105,7 @@ def create_app(test_config=None):
         return decorated
 
     @app.route('/dashboard')
+    @cross_origin()
     @requires_auth_login
     def dashboard():
         return render_template(
@@ -108,6 +113,7 @@ def create_app(test_config=None):
             token=session['jwt_payload'])
 
     @app.route('/logout')
+    @cross_origin()
     @requires_auth_login
     def logout():
         # Clear session stored data
