@@ -1,0 +1,35 @@
+{% extends 'layouts/main.html' %}
+{% block title %}New City{% endblock %}
+{% block content %}
+  <div class="form-wrapper">
+    <form method="post" class="form" action="/cities">
+      <h3 class="form-heading">City information <a href="/" title="Back to homepage"><i class="fa fa-home pull-right"></i></a></h3>
+      <div class="form-group">
+        <label for="name">Name</label>
+        {{ form.name(class_ = "form-control", placeholder="Basel", autofocus = true) }}
+      </div>
+      <div class="form-group">
+        <label for="country">Country</label>
+        {{ form.country(class_ = "form-control", autofocus = true) }}
+      </div>
+      <div class="form-group">
+        <label for="image_link">Image Link</label>
+        {{ form.image_link(class_ = "form-control", placeholder="http://", autofocus = true) }}
+      </div>
+      <div class="form-group">
+        <label for="transports">Transports</label>
+        <small>cmd + click to select multiple</small>
+        {{ form.transports(class_ = "form-control", placeholder='Transports, separated by commas', autofocus = true) }}
+      </div>
+      <div class="form-group">
+        <label for="has_more_info">Want to include some info about the city?</label>
+        {{ form.has_more_info(class_ = 'form-control', autofocus = true) }}
+      </div>
+      <div class="form-group">
+        <label for="info">More info about this city</label>
+        {{ form.info(class_ = 'form-control', placeholder="With its lake and the river Limmat, Zurich offers plenty of splendid opportunities for a swim.", autofocus = true) }}
+      </div>
+      <input type="submit" value="Create City" class="btn btn-primary btn-lg btn-block">
+    </form>
+  </div>
+{% endblock %}

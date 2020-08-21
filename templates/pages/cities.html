@@ -1,0 +1,19 @@
+{% extends 'layouts/main.html' %}
+{% block title %}Archi Guide | Cities{% endblock %}
+{% block content %}
+{% for country in countries %}
+<h3>{{ country.country_name }}</h3>
+	<ul class="items">
+		{% for city in country.cities %}
+		<li>
+			<a href="/cities/{{ city.id }}">
+				<i class="fas fa-map-pin"></i>
+				<div class="item">
+					<h5>{{ city.name }}</h5>
+				</div>
+			</a>
+		</li>
+		{% endfor %}
+	</ul>
+{% endfor %}
+{% endblock %}

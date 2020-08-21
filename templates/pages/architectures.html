@@ -1,0 +1,21 @@
+{% extends 'layouts/main.html' %}
+{% block title %}Archi Guide | Architecture{% endblock %}
+{% block content %}
+<div class="row shows">
+    {%for architecture in architectures %}
+    <div class="col-sm-4">
+        <div>
+            <img src="{{ architecture.image_link }}" alt="Architecture Image" />
+            <h3><a href="/architectures/{{ architecture.id }}">{{ architecture.name }}</a></h3> 
+            <h6>
+                <a href="/cities/{{ architecture.city_id }}">{{ architecture.city_name }}</a>
+            </h6>
+            <h6>
+                <a href="/architects/{{ architecture.architect_id }}">{{ architecture.architect_name }}</a>
+            </h6>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+{% endblock %}
+

@@ -1,0 +1,64 @@
+{% extends 'layouts/main.html' %}
+{% block title %}{{ architect.name }} | Architect{% endblock %}
+{% block content %}
+<div class="row">
+	<div class="col-sm-6">
+		<h1>
+			{{ architect.name }}
+		</h1>
+		<div class="genres">
+            {% for award in architect.awards %}
+			<span class="genre">{{ award }}</span>
+            {% endfor %}
+        </div>
+        <p>
+            <i class="fas fa-info"></i>
+            ID: {{ architect.id }}
+        </p>
+        <p>
+            <i class="far fa-calendar"></i>{{ architect.birthday }}, {{ architect.birthplace }}
+        </p>
+		<p>
+		    <i class="fas fa-globe-americas"></i> {{ architect.nationality }}
+        </p>
+        <p>
+            <i class="fas fa-link"></i><a href="{{ architect.website }}">{% if architect.website %} {{ architect.website }} {% endif %}</a>
+        </p>
+		{% if architect.has_quote %}
+		<div class="seeking">
+            <br />
+			<div class="description">
+				<i class="fas fa-quote-left"></i> {{ architect.quote }} <i class="fas fa-quote-right"></i>
+            </div>
+            <br />
+		</div>
+		{% endif %}
+	</div>
+	<div class="col-sm-6">
+		<img src="{{ architect.image_link }}" ALIGN="right" alt="Architect Image" />
+	</div>
+</div>
+<section>
+	<h2>{% if architect.architecture_count == 1 %}Work{% else %}Works{% endif %}</h2>
+	<div class="row">
+		{%for architecture in architect.architectures %}
+		<div class="col-sm-4">
+			<div>
+				<img src="{{ architecture.image_link }}" alt="Show Architecture Poster" />
+                <h3><a href="/architectures/{{ architecture.id }}">{{ architecture.name }}</a></h3>
+				<h6><a href="/cities/{{ architecture.id }}">{{ architecture.city_name }}</a></h6>
+				<h6>{{ architecture.address }}</h6>
+			</div>
+		</div>
+		{% endfor %}
+	</div>
+</section>
+<section>
+<div class="row">
+    <div class="col-sm-6">
+        <a href="/architects/{{ architect.id }}/patch"><button class="btn btn-default btn-sm">Edit</button>
+        <a href="/architects/{{ architect.id }}/delete"><button class="btn btn-default btn-sm">Delete</button></a>
+    </div>
+</section>
+{% endblock %}
+

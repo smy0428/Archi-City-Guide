@@ -1,0 +1,19 @@
+{% extends 'layouts/main.html' %}
+{% block title %}Archi Guide | Architects{% endblock %}
+{% block content %}
+{% for nationality in nationalities %}
+<h3>{{ nationality.nationality_name }}</h3>
+	<ul class="items">
+		{% for architect in nationality.architects %}
+		<li>
+			<a href="/architects/{{ architect.id }}">
+				<i class="fas fa-user-circle"></i>
+				<div class="item">
+					<h5>{{ architect.name }}</h5>
+				</div>
+			</a>
+		</li>
+		{% endfor %}
+	</ul>
+{% endfor %}
+{% endblock %}

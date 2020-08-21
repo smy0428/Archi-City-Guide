@@ -1,0 +1,66 @@
+{% extends 'layouts/main.html' %}
+{% block title %}{{ data.architecture.name }} | Architecture{% endblock %}
+{% block content %}
+<div class="row">
+	<div class="col-sm-6">
+		<h1>
+			{{ data.architecture.name }}
+		</h1>
+        <p>
+            <i class="fas fa-info"></i>
+            ID: {{ data.architecture.id }}
+        </p>
+        <p>
+            <i class="fas fa-user-circle"></i>
+            <a href="/architects/{{data.architecture.architect_id}}">
+            {{ data.architecture.architect_name }}
+            </a>
+        </p>
+        <p>
+            <i class="fas fa-check"></i>
+            {{ data.architecture.completed_year }}
+        </p>
+        <p>
+            <i class="fas fa-map-marker"></i> 
+            {{ data.architecture.latitude }}, {{ data.architecture.longitude }}
+		</p>
+		<p>
+            <i class="fas fa-globe-americas"></i> 
+            {{ data.architecture.address }}
+        </p>
+        {% if data.architecture.has_more_info %}
+		<div class="seeking">
+            <br />
+			<div class="description">
+				<i class="fas fa-quote-left"></i> {{ data.architecture.info }} <i class="fas fa-quote-right"></i>
+            </div>
+            <br />
+		</div>
+		{% endif %}
+	</div>
+	<div class="col-sm-6">
+		<img src="{{ data.architecture.image_link }}" ALIGN="right" alt="Architecture Image" />
+	</div>
+</div>
+<section>
+	<h2>Other images</h2>
+	<div class="row">
+		{%for image_link in data.images %}
+		<div class="col-sm-4">
+			<div class="form-wrapper">
+				<img src="{{ image_link }}" alt="Show Architecture Poster" />
+			</div>
+		</div>
+		{% endfor %}
+	</div>
+</section>
+<section>
+    <div class="row">
+        <div class="col-sm-6">
+            <a href="/architectures/{{data.architecture.id}}/patch"><button class="btn btn-default btn-sm">Edit</button>
+            <a href="/architectures/{{ data.architecture.id }}/delete"><button class="btn btn-default btn-sm">Delete</button></a>
+        </div>
+	</div>
+</section>
+{% endblock %}
+

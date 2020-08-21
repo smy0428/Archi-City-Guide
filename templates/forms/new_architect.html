@@ -1,0 +1,51 @@
+{% extends 'layouts/main.html' %}
+{% block title %}New Architect{% endblock %}
+{% block content %}
+  <div class="form-wrapper">
+    <form method="post" class="form" action="/architects">
+      <h3 class="form-heading">List a new architect<a href="/" title="Back to homepage"><i class="fa fa-home pull-right"></i></a></h3>
+        <div class="form-group">
+          <label for="name">Name</label>
+          {{ form.name(class_ = 'form-control', placeholder="Peter Zumthor", autofocus = true) }}
+        </div>
+        <div class="form-group">
+          <label for="gender">Gender</label>
+          {{ form.gender(class_ = 'form-control', autofocus = true) }}
+        </div>
+        <div class="form-group">
+          <label for="birthday">Birthday</label>
+          {{ form.birthday(class_ = 'form-control', placeholder="1991-10-19", autofocus = true) }}
+        </div>
+        <div class="form-group">
+          <label for="birthplace">Birthplace</label>
+          {{ form.birthplace(class_ = 'form-control', placeholder="Basel", autofocus = true) }}
+        </div>
+        <div class="form-group">
+          <label for="nationality">Nationality</label>
+          {{ form.nationality(class_ = 'form-control', autofocus = true) }}
+        </div>
+        <div class="form-group">
+          <label for="image_link">Image Link</label>
+          {{ form.image_link(class_ = 'form-control', placeholder="http://", autofocus = true) }}
+        </div>
+        <div class="form-group">
+          <label for="website">Website</label>
+          {{ form.website(class_ = 'form-control', placeholder="http://", autofocus = true) }}
+        </div>
+        <div class="form-group">
+          <label for="has_quote">Want to include a quote from this architect?</label>
+          {{ form.has_quote(class_ = 'form-control', autofocus = true) }}
+        </div>
+        <div class="form-group">
+          <label for="quote">Architect quote</label>
+          {{ form.quote(class_ = 'form-control', placeholder="Architecture is the reaching out for the truth.", autofocus = true) }}
+        </div>
+        <div class="form-group">
+          <label for="awards">Awards</label>
+          <small>cmd + click to select multiple</small>
+          {{ form.awards(class_ = 'form-control', placeholder='Awards, separated by commas', autofocus = true) }}
+        </div>
+      <input type="submit" value="Create Architect" class="btn btn-primary btn-lg btn-block">
+    </form>
+  </div>
+{% endblock %}

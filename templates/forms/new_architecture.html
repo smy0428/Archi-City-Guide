@@ -1,0 +1,64 @@
+{% extends 'layouts/main.html' %}
+{% block title %}New Architecture{% endblock %}
+{% block content %}
+  <div class="form-wrapper">
+    <form method="post" class="form" action="/architectures">
+      <h3 class="form-heading">Architecture information<a href="/" title="Back to homepage"><i class="fa fa-home pull-right"></i></a></h3>
+      <div class="form-group">
+        <label for="architect_id">Architect ID</label>
+        <small>ID can be found on the Architect's Page</small>
+        {{ form.architect_id(class_ = 'form-control', autofocus = true) }}
+      </div>
+      <div class="form-group">
+        <label for="city_id">City ID</label>
+        <small>ID can be found on the City's Page</small>
+        {{ form.city_id(class_ = 'form-control', autofocus = true) }}
+      </div>
+      <div class="form-group">
+        <label for="name">Name</label>
+        {{ form.name(class_ = "form-control", placeholder="Therme Vals", autofocus = true) }}
+      </div>
+      <div class="form-group">
+        <label for="completed_year">Completed year</label>
+        {{ form.completed_year(class_ = "form-control", placeholder="1996", autofocus = true) }}
+      </div>
+      <div class="form-group">
+        <label for="address">Address</label>
+        {{ form.address(class_ = "form-control", placeholder="Poststrasse 560, 7132 Vals, Switzerland", autofocus = true) }}
+      </div>
+      <div class="form-group">
+        <label for="latitude">Latitude (-90 ~ 90)</label>
+        {{ form.latitude(class_ = "form-control", placeholder="-12.3456", autofocus = true) }}
+      </div>
+      <div class="form-group">
+        <label for="longitude">Longitude (-180 ~ 180)</label>
+        {{ form.longitude(class_ = "form-control", placeholder="12.3456", autofocus = true) }}
+      </div>
+      <div class="form-group">
+        <label for="image_link">Image Link</label>
+        {{ form.image_link(class_ = "form-control", placeholder="http://", autofocus = true) }}
+      </div>
+      <div class="form-group">
+        <label for="has_more_info">Want to include some info about the work?</label>
+        {{ form.has_more_info(class_ = 'form-control', autofocus = true) }}
+      </div>
+      <div class="form-group">
+        <label for="info">More info about this work</label>
+        {{ form.info(class_ = 'form-control', placeholder="Le Corbusier's final project.", autofocus = true) }}
+      </div>
+      <div class="form-group">
+        <label for="other_image_link_1">Other Image Link 1</label>
+        {{ form.other_image_link_1(class_ = "form-control", placeholder="http://", autofocus = true) }}
+      </div>
+      <div class="form-group">
+        <label for="other_image_link_2">Other Image Link 2</label>
+        {{ form.other_image_link_2(class_ = "form-control", placeholder="http://", autofocus = true) }}
+      </div>
+      <div class="form-group">
+        <label for="other_image_link_3">Other Image Link 3</label>
+        {{ form.other_image_link_3(class_ = "form-control", placeholder="http://", autofocus = true) }}
+      </div>
+      <input type="submit" value="Create Architecture" class="btn btn-primary btn-lg btn-block">
+    </form>
+  </div>
+{% endblock %}
