@@ -1,5 +1,5 @@
 AUTH0_CLIENT_ID = 'AlHUXHQ9siAfCVG4lCLWyjI6DcK5ai53'
 AUTH0_CALLBACK_URL = 'http://127.0.0.1:5000/callback'
-AUTH0_DOMAIN = 'https://peter-coffee-shop.us.auth0.com'
+AUTH0_DOMAIN = 'peter-coffee-shop.us.auth0.com'
 AUTH0_AUDIENCE = 'archi_guide'
 AUTHO_CLIENT_SECRET = 'N5EfgILViJR89Cap_2u3G7PqbjN2oCxdRvkPGZRC0WWpX2JwITMsHvmaOm1Efy_F'

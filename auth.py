@@ -6,9 +6,10 @@ from jose import jwt
 from urllib.request import urlopen
 import constants
 
-AUTH0_DOMAIN = constants.get('AUTH0_DOMAIN', 'peter-coffee-shop.us.auth0.com')
+
 ALGORITHMS = ['RS256']
-API_AUDIENCE = constants.get('API_AUDIENCE', 'archi_guide')
+AUTH0_DOMAIN = constants.AUTH0_DOMAIN
+API_AUDIENCE = constants.API_AUDIENCE
 
 
 # ---------------------------------------------------------------------------#
