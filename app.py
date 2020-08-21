@@ -27,25 +27,9 @@ import constants
 SECRET_KEY = os.urandom(28)
 AUTH0_CLIENT_ID = constants.AUTH0_CLIENT_ID
 AUTH0_CALLBACK_URL = constants.AUTH0_CALLBACK_URL
-AUTH0_DOMAIN = constants.AUTH0_CALLBACK_URL
-AUTH0_AUDIENCE = constants.AUTH0_CALLBACK_URL
-AUTHO_CLIENT_SECRET = constants.AUTH0_CALLBACK_URL
-
-LOGIN_LINK = (
-    AUTH0_DOMAIN +
-    '/authorize?audience=' +
-    AUTH0_AUDIENCE +
-    '&response_type=token&client_id=' +
-    AUTH0_CLIENT_ID +
-    '&redirect_uri=' +
-    AUTH0_CALLBACK_URL
-)
-
-LOGOUT_LINK = (
-    AUTH0_DOMAIN +
-    '/v2/logout?client_id=' +
-    AUTH0_CLIENT_ID
-)
+AUTH0_DOMAIN = constants.AUTH0_DOMAIN
+AUTH0_AUDIENCE = constants.AUTH0_AUDIENCE
+AUTHO_CLIENT_SECRET = constants.AUTHO_CLIENT_SECRET
 
 
 def create_app(test_config=None):
