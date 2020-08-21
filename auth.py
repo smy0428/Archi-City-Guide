@@ -9,7 +9,7 @@ import constants
 
 ALGORITHMS = ['RS256']
 AUTH0_DOMAIN = constants.AUTH0_DOMAIN
-API_AUDIENCE = constants.API_AUDIENCE
+AUTH0_AUDIENCE = constants.AUTH0_AUDIENCE
 
 
 # ---------------------------------------------------------------------------#
@@ -111,7 +111,7 @@ def verifty_decode_jwt(token):
                 token,
                 rsa_key,
                 algorithms=ALGORITHMS,
-                audience=API_AUDIENCE,
+                audience=AUTH0_AUDIENCE,
                 issuer='https://' + AUTH0_DOMAIN + '/'
             )
 
