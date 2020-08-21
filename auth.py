@@ -4,11 +4,11 @@ from functools import wraps
 from flask import request, session
 from jose import jwt
 from urllib.request import urlopen
+import constans
 
-
-AUTH0_DOMAIN = os.environ.get('AUTH0_DOMAIN', 'peter-coffee-shop.us.auth0.com')
+AUTH0_DOMAIN = constans.get('AUTH0_DOMAIN', 'peter-coffee-shop.us.auth0.com')
 ALGORITHMS = ['RS256']
-API_AUDIENCE = os.environ.get('API_AUDIENCE', 'archi_guide')
+API_AUDIENCE = constans.get('API_AUDIENCE', 'archi_guide')
 
 
 # ---------------------------------------------------------------------------#
