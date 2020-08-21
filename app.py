@@ -21,17 +21,15 @@ from authlib.integrations.flask_client import OAuth
 from six.moves.urllib.parse import urlencode
 from dotenv import load_dotenv, find_dotenv
 from functools import wraps
+import constants
 
 
 SECRET_KEY = os.urandom(28)
-AUTH0_CLIENT_ID = 'AlHUXHQ9siAfCVG4lCLWyjI6DcK5ai53'
-AUTH0_CALLBACK_URL = 'http://127.0.0.1:5000/callback'
-AUTH0_DOMAIN = 'https://peter-coffee-shop.us.auth0.com'
-AUTH0_AUDIENCE = 'archi_guide'
-AUTHO_CLIENT_SECRET = os.environ.get(
-    'CLIENT_SECRET',
-    'N5EfgILViJR89Cap_2u3G7PqbjN2oCxdRvkPGZRC0WWpX2JwITMsHvmaOm1Efy_F'
-)
+AUTH0_CLIENT_ID = constants.AUTH0_CLIENT_ID
+AUTH0_CALLBACK_URL = constants.AUTH0_CALLBACK_URL
+AUTH0_DOMAIN = constants.AUTH0_CALLBACK_URL
+AUTH0_AUDIENCE = constants.AUTH0_CALLBACK_URL
+AUTHO_CLIENT_SECRET = constants.AUTH0_CALLBACK_URL
 
 LOGIN_LINK = (
     AUTH0_DOMAIN +
