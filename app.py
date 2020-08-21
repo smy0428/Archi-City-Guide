@@ -94,6 +94,7 @@ def create_app(test_config=None):
         flash('You have successfully logged in!')
         return redirect('/')
 
+    '''
     @cross_origin()
     def requires_auth_login(f):
         @wraps(f)
@@ -103,8 +104,7 @@ def create_app(test_config=None):
                 return redirect('/')
             return f(*args, **kwargs)
         return decorated
-        
-    '''
+
     @app.route('/dashboard')
     @cross_origin()
     @requires_auth_login
@@ -116,8 +116,11 @@ def create_app(test_config=None):
 
     @app.route('/logout')
     @cross_origin()
-    @requires_auth_login
     def logout():
+        if 'jwt_payload' not in session:
+            flash('You should log in first!')
+            return redirect('/')
+            
         # Clear session stored data
         session['jwt_payload'] = None
         session.clear()
