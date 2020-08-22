@@ -14,8 +14,8 @@ import os
 
 database_path = os.environ.get('DATABASE_URL')
 if database_path is None:
-    database_name = "Archi_Guide"
-    # database_name = 'archi_guide_test'
+    # database_name = "Archi_Guide"
+    database_name = 'archi_guide_test'
     # print('****** using test db ********')
     database_path = "postgres://{}/{}".format('localhost:5432', database_name)
 

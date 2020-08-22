@@ -4,7 +4,7 @@
 
 The Archi Guide is an architecture-tour-guide site that facilitates the discovery and sharing of travel experiences. This site lets you list new architects, cities, discover them, and list architectural work designed by the architects in the cities. You can also find various useful information to make a better plan for your next trip. You can easily start to explore the architectural world by typing the name of a city or architect. 
 
-The link is as follows:
+The heroku link is as follows, have fun:
 https://archi-city-guide.herokuapp.com/
 
 
@@ -133,7 +133,10 @@ There are three roles for this application:
 - Fetches an architecture according to the id
 - Request arguments: architecture_id
 
-`GET/POST '/architects'`
+`GET '/architects/create'`
+- Render a form to fetch the info about the new architect that will be created
+
+`POST '/architects'`
 - Add a new architect in the database
 - Request arguments: 
 ```
@@ -151,6 +154,9 @@ There are three roles for this application:
 }
 ```
 
+`GET '/cities/create'`
+- Render a form to fetch the info about the new city that will be created
+
 `GET/POST '/cities'`
 - Add a new city in the database
 - Request arguments: 
@@ -164,6 +170,9 @@ There are three roles for this application:
     info: string
 }
 ```
+
+`GET '/architectures/create'`
+- Render a form to fetch the info about the new architecture that will be created
 
 `GET/POST '/architectures'`
 - Add a new architecture in the database
@@ -184,7 +193,10 @@ There are three roles for this application:
 }
 ```
 
-`GET/POST '/architects/<int:architect_id>'`
+`GET '/architects/<int:architect_id>'`
+- Render a form to fetch the update info about an architect in the database based on the architect_id
+
+`POST '/architects/<int:architect_id>'`
 - Update an architect in the database based on the architect_id
 - Request arguments (optional): 
 ```
@@ -202,7 +214,10 @@ There are three roles for this application:
 }
 ```
 
-`GET/POST '/cities/<int:city_id>'`
+`GET '/cities/<int:city_id>'`
+- Render a form to fetch the update info about an city in the database based on the city_id
+
+`POST '/cities/<int:city_id>'`
 - Update an city in the database based on the city_id
 - Request arguments (optional): 
 ```
@@ -216,7 +231,10 @@ There are three roles for this application:
 }
 ```
 
-`GET/POST'/architectures/<int:architecture_id>'`
+`GET '/architectures/<int:architecture_id>'`
+- Render a form to fetch the update info about an architecture in the database based on the architecture_id
+
+`POST'/architectures/<int:architecture_id>'`
 - Update an architecture in the database based on the architecture_id
 - Request arguments (optional): 
 ```

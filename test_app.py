@@ -265,12 +265,12 @@ class ArchiGuideTestCase(unittest.TestCase):
 
     def test_post_architects(self):
         res = self.client.post(
-            '/architects/create', data=self.new_architect, headers=header_user
+            '/architects', data=self.new_architect, headers=header_user
         )
         self.assertEqual(res.status_code, 201)
 
     def test_error_401_post_architects_unauthorized(self):
-        res = self.client.post('/architects/create', data=self.new_architect)
+        res = self.client.post('/architects', data=self.new_architect)
         self.assertEqual(res.status_code, 401)
 
     def test_post_cities_form(self):
@@ -279,13 +279,13 @@ class ArchiGuideTestCase(unittest.TestCase):
 
     def test_post_cities(self):
         res = self.client.post(
-            '/cities/create', data=self.new_city, headers=header_user
+            '/cities', data=self.new_city, headers=header_user
         )
         self.assertEqual(res.status_code, 201)
 
     def test_error_422_post_cities_incomplete_info(self):
         res = self.client.post(
-            '/cities/create', data=self.bad_city, headers=header_user
+            '/cities', data=self.bad_city, headers=header_user
         )
         self.assertEqual(res.status_code, 422)
 
@@ -295,7 +295,7 @@ class ArchiGuideTestCase(unittest.TestCase):
 
     def test_post_architectures(self):
         res = self.client.post(
-            '/architectures/create',
+            '/architectures',
             data=self.new_architecture,
             headers=header_user
         )
