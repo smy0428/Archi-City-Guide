@@ -133,6 +133,27 @@
   <script>window.jQuery || document.write('<script type="text/javascript" src="/static/js/libs/jquery-1.11.1.min.js"><\/script>')</script>
   <script type="text/javascript" src="/static/js/libs/bootstrap-3.1.1.min.js" defer></script>
   <script type="text/javascript" src="/static/js/plugins.js" defer></script>
+
+<!--
+  <script type="text/javascript">
+    window.onload = function() {
+      if (document.cookie.match(/^(.*;)?\s*user_token\s*=\s*[^;]+(.*)?$/)) {
+         var node = document.createElement("LI"); 
+         node.innerHTML = "<button onclick='logout()'>logout</button>"
+         document.getElementById("navbar").appendChild(node); 
+        } else {
+          var node = document.createElement("LI"); 
+         node.innerHTML = "<a href='/login'>Login/Signup</a>"
+         document.getElementById("navbar").appendChild(node); 
+        }
+    }
+
+    function logout() {
+        document.cookie = "user_token=; expires=Thu, 01 Jan 1970 00:00:01 GMT;"
+        location.reload();
+    }
+    </script>
+-->
   
 </body>
 </html>

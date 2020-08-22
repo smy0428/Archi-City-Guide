@@ -244,7 +244,7 @@ def create_app(test_config=None):
         form = ArchitectForm()
         return render_template('/forms/new_architect.html', form=form), 200
 
-    @app.route('/architects/create', methods=['POST'])
+    @app.route('/architects', methods=['POST'])
     @requires_auth('post:architects')
     def create_architect(jwt):
         name = request.form.get('name')
@@ -453,7 +453,7 @@ def create_app(test_config=None):
         form = CityForm()
         return render_template('/forms/new_city.html', form=form), 200
 
-    @app.route('/cities/create', methods=['POST'])
+    @app.route('/cities', methods=['POST'])
     @requires_auth('post:cities')
     def create_city(jwt):
         name = request.form.get('name')
@@ -623,7 +623,7 @@ def create_app(test_config=None):
         form = ArchitectureForm()
         return render_template('/forms/new_architecture.html', form=form), 200
 
-    @app.route('/architectures/create', methods=['POST'])
+    @app.route('/architectures', methods=['POST'])
     @requires_auth('post:architectures')
     def create_architecture(jwt):
         name = request.form.get('name')

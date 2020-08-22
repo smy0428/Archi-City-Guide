@@ -23,20 +23,13 @@ class AuthError(Exception):
 
 # ---------------------------------------------------------------------------#
 # Token in header.
-
-
-# login or signup user ----> token ----> testing roles
-# https://peter-coffee-shop.us.auth0.com/authorize?audience=casting_agency&response_type=
-# token&client_id=apOecSIpF8k5zIZe87T32BKXjuVJ5LtY&redirect_uri=http://127.0.0.1:5000/
-
-# logout link to change a user
-# https://peter-coffee-shop.us.auth0.com/v2/logout?client_id=apOecSIpF8k5zIZe87T32BKXjuVJ5LtY
 # ---------------------------------------------------------------------------#
 
 
 def get_token_auth_header():
     # for user already logged in
     if session.get('jwt_payload'):
+        print('******', session.get('jwt_payload'), '******')
         return session.get('jwt_payload')
 
     # for the test case
