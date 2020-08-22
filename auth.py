@@ -32,6 +32,7 @@ def get_token_auth_header():
         print('******', session.get('jwt_payload'), '******')
         return session.get('jwt_payload')
 
+    print('****** NO token has been loaded ******')
     # for the test case
     auth = request.headers.get('Authorization', None)
     if auth is None:
