@@ -240,7 +240,7 @@ def create_app(test_config=None):
 
     @app.route('/architects/create', methods=['GET'])
     # @requires_auth('post:architects')
-    def create_architect_form(jwt):
+    def create_architect_form():
         form = ArchitectForm()
         return render_template('/forms/new_architect.html', form=form), 200
 
