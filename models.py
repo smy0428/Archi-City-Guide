@@ -219,7 +219,7 @@ class Architecture(BaseModel):
         self.info = info
         self.other_image_link_1 = other_image_link_1
         self.other_image_link_2 = other_image_link_2
-        self.other_image_link_3 = other_image_link_2
+        self.other_image_link_3 = other_image_link_3
 
     def __repr__(self):
         return f'<Architecture No.{self.id} is {self.name}>'
