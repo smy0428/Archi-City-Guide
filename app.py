@@ -24,7 +24,7 @@ from functools import wraps
 import constants
 
 
-SECRET_KEY = os.urandom(28)
+SECRET_KEY = constants.SECRET_KEY
 AUTH0_CLIENT_ID = constants.AUTH0_CLIENT_ID
 AUTH0_CALLBACK_URL = constants.AUTH0_CALLBACK_URL
 AUTH0_DOMAIN = constants.AUTH0_DOMAIN
